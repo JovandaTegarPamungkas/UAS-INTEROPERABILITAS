@@ -52,7 +52,7 @@ app.get('/api/marketplace-products', async (req, res, next) => {
                 id: item.sku,
                 nama: item.productName,
                 harga: item.price,
-                status: item.isAvailable ? "Tersedia" : "Tidak Tersedia", // Boolean ke String
+                status: (item.isAvailable === true || item.isAvailable === "true") ? "Tersedia" : "Tidak Tersedia", // Boolean ke String
                 sumber: "Vendor B (Distro)"
             };
         });
