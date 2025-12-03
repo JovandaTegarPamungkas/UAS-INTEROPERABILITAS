@@ -103,6 +103,10 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server Integrator aktif di http://localhost:${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server Integrator berjalan di port ${PORT}`);
+    });
+}
+
+module.exports = app;
